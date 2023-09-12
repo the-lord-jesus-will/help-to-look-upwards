@@ -6,13 +6,13 @@
 
 ---
 
-**Psalm 2.11**
+![s1](./assets/s1.webp)
 
 11 Serve the Lord with fear, and rejoice with trembling.
 
 ---
 
-**Philippians 2.10-13**
+![s2](./assets/s2.webp)
 
 10 That at the name of Jesus every knee should bow, of *things* in heaven, and *things* in earth, and *things* under the earth;
 
@@ -24,7 +24,7 @@
 
 ---
 
-**Matthew 24.4-13**
+![s3](./assets/s3.webp)
 
 4 And Jesus answered and said unto them, Take heed that no man deceive you.
 
@@ -48,7 +48,7 @@
 
 ---
 
-**Luke 21.7-20**
+![s4](./assets/s4.webp)
 
 7 And they asked him, saying, Master, but when shall these things be? and what sign *will* *there* *be* when these things shall come to pass?
 
@@ -80,7 +80,7 @@
 
 ---
 
-**Mark 13.5-13**
+![s5](./assets/s5.webp)
 
 5 And Jesus answering them began to say, Take heed lest any *man* deceive you:
 
@@ -102,7 +102,7 @@
 
 ---
 
-**2 Corinthians 4.1-10**
+![s6](./assets/s6.webp)
 
 THEREFORE seeing we have this ministry, as we have received mercy, we faint not;
 
@@ -126,7 +126,7 @@ THEREFORE seeing we have this ministry, as we have received mercy, we faint not;
 
 ---
 
-**Isaiah 12.1-6**
+![s7](./assets/s7.webp)
 
 AND in that day thou shalt say, O Lord, I will praise thee: though thou wast angry with me, thine anger is turned away, and thou comfortedst me.
 
@@ -142,7 +142,7 @@ AND in that day thou shalt say, O Lord, I will praise thee: though thou wast ang
 
 ---
 
-**Isaiah 25.8-9**
+![s8](./assets/s8.webp)
 
 8 He will swallow up death in victory; and the Lord God will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for the Lord hath spoken *it*.
 
