@@ -208,743 +208,211 @@ mjx-container { break-inside: avoid; }
 @import url('https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100;16..144,300;16..144,500;16..144,700&display=swap');
 
 :root {
-  --side-bar-bg-color: #180018;
-  --control-text-color: #aaa;
-  --active-file-bg-color: #383838;
-  --control-text-hover-color: #ddd;
-  --item-hover-bg-color: #404040;
-  --text-color: #c0c0c0;
-  --blur-text-color: #80808080;
-  --bg-color: rgb(24, 0, 24);
-  --select-text-bg-color: #663f3f !important;
-  --monospace: "IBM Plex Mono", "Fira Code", "微软雅黑", monospace !important;
-  --window-border: 1px solid #404040;
-  --rawblock-edit-panel-bd: #180018;
-  --mermaid-theme: dark;
-  --mermaid-font-family: "IBM Plex Mono", "Fira Code", "微软雅黑", monospace !important;
-  --mermaid-sequence-numbers: off; /* or "on", see https://mermaid-js.github.io/mermaid/#/sequenceDiagram?id=sequencenumbers*/
-  --mermaid-flowchart-curve: basis
-    /* or "basis", see https://github.com/typora/typora-issues/issues/1632*/;
-  --mermaid--gantt-left-padding: 100; /* see https://github.com/typora/typora-issues/issues/1665*/
-  --heading-char-color: #aaa;
-  --meta-content-color: #6794bc;
-  --primary-color: #a7d959;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #42424280 !important;
-}
-
-.menu-item-container a.menu-style-btn {
-  background: #424242;
+  --fserif: "IBM Plex Mono", "Fira Code", "微软雅黑", monospace !important;
+  --fsans: "Montagu Slab", "IBM Plex Sans","Microsoft YaHei", "微软雅黑", "Open Sans", "Clear Sans", "Helvetica Neue",
+  Helvetica, Arial, sans-serif;
+  --monospace: 'Fira Code', 'Inconsolata', 'Cascadia Code', 'Consolas', monospace;
+  --bg-color: #a23021;
+  --text-color: #ffddc7;
+  --clabel: #6f837a;
+  --ccard: #dff3ea;
+  --cwhite: #fff;
+  --side-bar-bg-color: var(--ccard);
+  --md-char-color: var(--clabel);
+  --meta-content-color: var(--clabel);
+  --active-file-bg-color: var(--cwhite);
 }
 
 html {
-  font-size: 20px;
+  font-family: var(--fsans);
+  font-feature-settings: 'tnum', 'cv05', 'cv08';
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+content {
+  background-color: var(--bg-color);
 }
 
 body {
-  font-family: "Montagu Slab", "IBM Plex Sans","Microsoft YaHei", "微软雅黑", "Open Sans", "Clear Sans", "Helvetica Neue",
-    Helvetica, Arial, sans-serif;
-  color: aqua;
-  font-weight: 100;
-  background-color: var(--bg-color);
-  line-height: 1.75;
-  scroll-behavior: smooth;
-}
-
-#typora-quick-open {
-  border: none !important;
-  background-color: #180018 !important;
-}
-
-#write {
-  max-width: 860px;
   margin: 0 auto;
-  padding: 30px;
-  padding-bottom: 100px;
-}
-#write > ul:first-child,
-#write > ol:first-child {
-  margin-top: 30px;
+  background-color: var(--bg-color);
+  font-size: 22px;
+  font-weight: 100;
 }
 
-#recent-file-panel tbody tr:nth-child(2n-1) {
-  background-color: #242424;
+p {
+  clear: both;
+  padding: 1px;
 }
 
-/*table,
-input {
-  border: 1px solid #aaa !important;
-}*/
-
-#write a {
-  color: #a7d959;
-  text-decoration: none !important;
-  border-bottom: 1px solid #a7d959;
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dashed;
 }
 
-#write a:hover {
-  color: fuchsia;
-  text-decoration: none !important;
-  border-bottom: 1px solid #a7d959;
-  font-weight: 300;
-}
-
-::selection {
-  background: #2b3400;
-  color: yellow;
-}
-
-.md-comment {
-  color: var(--text-color);
-  opacity: 0.5;
-  font-family: var(--monospace);
+a:hover {
+  background-color: yellow;
 }
 
 h1,
-h2,
 h3,
+h5 {
+  font-family: var(--fserif);
+}
+
+h2,
 h4,
+h6 {
+  font-family: var(--fsans);
+}
+
+h1 {
+  font-size: 250%;
+  text-align: center;
+}
+
+h2 {
+  font-size: 150%;
+}
+
+h3 {
+  font-size: 150%;
+}
+
+h4 {
+  font-size: 125%;
+}
+
+h2 {
+  color: var(--cwhite);
+  padding-top: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 2px;
+  background-color: var(--clabel);
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 4px 1px #00000026;
+}
+
 h5,
 h6 {
-  position: relative;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-  line-height: 1.4;
-  cursor: text;
-}
-h1:hover a.anchor,
-h2:hover a.anchor,
-h3:hover a.anchor,
-h4:hover a.anchor,
-h5:hover a.anchor,
-h6:hover a.anchor {
-  text-decoration: none;
-}
-h1 tt,
-h1 code {
-  font-size: inherit;
-}
-h2 tt,
-h2 code {
-  font-size: inherit;
-}
-h3 tt,
-h3 code {
-  font-size: inherit;
-}
-h4 tt,
-h4 code {
-  font-size: inherit;
-}
-h5 tt,
-h5 code {
-  font-size: inherit;
-}
-h6 tt,
-h6 code {
-  font-size: inherit;
-}
-h1 {
-  padding-bottom: 0.3em;
-  font-size: 2.25em;
-  line-height: 1.2;
-  border-bottom: 1px solid #202020;
-}
-h2 {
-  padding-bottom: 0.3em;
-  font-size: 1.75em;
-  line-height: 1.225;
-  border-bottom: 1px solid #202020;
-}
-h3 {
-  font-size: 1.5em;
-  line-height: 1.43;
-}
-h4 {
-  font-size: 1.25em;
-}
-h5 {
-  font-size: 1em;
-}
-h6 {
-  font-size: 1em;
-  color: #777;
-}
-p,
-blockquote,
-ul,
-ol,
-dl,
-table {
-  margin: 0.8em 0;
-  text-align: left;
-}
-li > ol,
-li > ul {
-  margin: 0 0;
-}
-hr {
-  height: 2px;
-  padding: 0;
-  margin: 32px 0;
-  background-color: #180018;
-  border: 0 none;
-  overflow: hidden;
-  box-sizing: content-box;
+  font-size: 100%;
+  color: var(--cwhite);
+  padding-top: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 2px;
+  margin-bottom: 0px;
+  background-color: var(--clabel);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 4px 1px #00000026;
+  display: table;
 }
 
-li p.first {
-  display: inline-block;
-}
-ul,
-ol {
-  padding-left: 30px;
-}
-ul:first-child,
-ol:first-child {
-  margin-top: 0;
-}
-ul:last-child,
-ol:last-child {
-  margin-bottom: 0;
-}
-blockquote {
-  border-left: 4px solid #aaaaaa80;
-  margin-left: 2px;
-  padding: 0 15px;
-  color: #aaa;
-}
-blockquote blockquote {
-  padding-right: 0;
-}
-table {
-  padding: 0;
-  word-break: initial;
-  background-color: var(--bg-color);
-}
-table tr {
-  border-top: 1px solid #180018;
-  margin: 0;
-  padding: 0;
-}
-table tr:nth-child(2n),
-thead {
-  background-color: #180018;
-}
-table tr th {
-  font-weight: bold;
-  border: 1px solid #383838;
-  border-bottom: 0;
-  text-align: left;
-  margin: 0;
-  padding: 6px 13px;
-}
-table tr td {
-  border: 1px solid #383838;
-  text-align: left;
-  margin: 0;
-  padding: 6px 13px;
-}
-table tr th:first-child,
-table tr td:first-child {
-  margin-top: 0;
-}
-table tr th:last-child,
-table tr td:last-child {
-  margin-bottom: 0;
-}
-
-strong,
-b {
-  color: #f0f0f0;
-}
-
-.CodeMirror-lines {
-  padding-left: 4px;
-}
-
-.code-tooltip {
-  box-shadow: 0 1px 1px 0 rgba(26, 26, 26, 0.3);
-  border-top: 1px solid #202020;
+code {
+  background-color: var(--ccard);
+  box-shadow: 0 2px 4px 1px #00000026;
 }
 
 .md-fences,
-code,
-tt {
-  border: 1px solid #424242;
-  background-color: #42424280;
-  border-radius: 3px;
-  padding: 2px 4px 1px 4px;
-  font-size: 0.85em;
+pre.md-meta-block {
+  padding: 1rem 0.5rem 1rem;
+  background-color: var(--ccard);
+  box-shadow: 0 2px 4px 1px #00000026;
 }
 
-.md-fences {
-  margin-bottom: 15px;
-  margin-top: 15px;
-  padding: 0.2em 1em;
-  padding-top: 8px;
-  padding-bottom: 6px;
+blockquote,
+h6+p,
+h5+p,
+h6+div,
+h5+div {
+  padding: 8px;
+  background-color: var(--ccard);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 1px #00000026;
 }
 
-.md-task-list-item > input {
-  margin-left: -1.3em;
+h6+p,
+h5+p,
+h6+div,
+h5+div {
+  margin-top: 0px;
+  border-top-left-radius: 0px;
 }
 
-@media print {
-  html {
-    font-size: 13px;
-  }
-  table,
-  pre {
-    page-break-inside: avoid;
-  }
-  pre {
-    word-wrap: break-word;
-  }
+.col1 {
+  float: left;
+  min-width: 20em;
+  width: fit-content;
+  margin-right: 8px;
+  font-size: inherit;
 }
 
-.md-fences {
-  background-color: #180018;
+input[type="text"] {
+  margin-left: 20px;
 }
-#write pre.md-meta-block {
-  padding: 1rem;
-  font-size: 85%;
-  line-height: 1.45;
-  background-color: #180018;
+
+button {
+  margin-top: 10px;
+  padding: 4px;
+
+  cursor: pointer;
+
+  font-family: sans-serif;
+  font-size: 22px;
+  color: var(--cwhite);
+
+  background-color: var(--clabel);
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 #0000004c;
+}
+
+button:hover {
+  background-color: #d40;
+}
+
+button:active {
+  box-shadow: 0 1px 3px 2px #0000004c;
+}
+
+th {
+  border: 1px solid var(--clabel);
+  background-color: var(--clabel);
+  color: var(--cwhite);
+  padding: 5px;
+}
+
+td {
+  border: 1px solid var(--clabel);
+  background-color: var(--ccard);
+  padding: 5px;
+}
+
+u {
+  text-decoration: none;
   border: 0;
-  border-radius: 3px;
-  color: #aaa;
-  margin-top: 0 !important;
+  border-bottom: 1px solid;
+  border-image: linear-gradient(currentcolor, currentcolor) 1 0 / 1 0.1em;
 }
 
-.mathjax-block > .code-tooltip {
-  bottom: 0.375rem;
+#md-searchpanel {
+  background-color: var(--ccard);
 }
 
-.md-mathjax-midline {
-  background: #fafafa;
-}
-
-#write > h3.md-focus:before {
-  left: -1.5625rem;
-  top: 0.375rem;
-}
-#write > h4.md-focus:before {
-  left: -1.5625rem;
-  top: 0.285714286rem;
-}
-#write > h5.md-focus:before {
-  left: -1.5625rem;
-  top: 0.285714286rem;
-}
-#write > h6.md-focus:before {
-  left: -1.5625rem;
-  top: 0.285714286rem;
-}
-.md-image > .md-meta {
-  border-radius: 3px;
-  padding: 2px 0px 0px 4px;
-  font-size: 0.9em;
-  color: inherit;
-}
-
-.md-tag {
-  color: #a7a7a7;
-  opacity: .5;
-}
-
-.md-toc {
-  margin-top: 20px;
-  padding-bottom: 20px;
-}
-
-.sidebar-tabs {
-  border-bottom: none;
-}
-
-#typora-quick-open {
-  border: 1px solid #dddddd;
-  background-color: #f8f8f8;
-}
-
-#typora-quick-open-item {
-  background-color: #fafafa;
-  border-color: #fefefe #e5e5e5 #e5e5e5 #eee;
-  border-style: solid;
-  border-width: 1px;
-}
-
-footer.ty-footer {
-  height: 25px !important;
-  border-top: 1px solid #292a2d;
-  background: #292a2d !important;
-}
-
-.footer-item {
-  line-height: 25px !important;
-}
-
-#outline-btn {
-  margin-top: -2px !important;
-}
-
-.typora-sourceview-on #toggle-sourceview-btn {
-  background: #484848 !important;
-}
-
-.sidebar-content-content {
-  font-family: "IBM Plex Sans","Microsoft YaHei", "微软雅黑", "Open Sans", "Clear Sans", "Helvetica Neue",
-    Helvetica, Arial, sans-serif !important;
-}
-
-.outline-content {
-  padding: 3px 10px !important;
-  text-align: left !important;
-}
-
-.outline-item.outline-item-active {
-  margin-left: -28px;
-  margin-right: -28px;
-  border-left: 28px solid transparent;
-  border-right: 28px solid transparent;
-  background-color: #424242;
-  background-color: #424242;
-  border-color: #424242;
-  background-color: #424242;
-}
-
-.sidebar-footer {
-  height: 25px;
-  border-top: 1px solid #292a2d;
-  background: #292a2d;
-}
-
-.sidebar-footer-item {
-  line-height: 25px;
-  padding-top: 0px !important;
-}
-
-.file-node-icon {
-  margin-right: 6px;
-}
-
-.file-node-open-state {
-  margin-right: 6px;
-}
-
-.dropdown-menu {
-  background-color: #2a2a2a !important;
-}
-
-.dropdown-menu .divider {
-  border-color: #424242 !important;
-}
-
-/* focus mode */
-.on-focus-mode blockquote {
-  border-left-color: rgba(85, 85, 85, 0.12);
-}
-
-.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) img {
-  opacity: 20%;
-}
-.on-focus-mode .task-list-item:not(.md-focus-container) > input {
-  opacity: 20%;
-}
-.on-focus-mode
-  .md-fences.md-focus
-  .CodeMirror-code
-  > *:not(.CodeMirror-activeline)
-  *,
-.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
-  color: #80808080 !important;
-}
-.on-focus-mode li[cid]:not(.md-focus-container) {
-  color: #80808080 !important;
-}
-/*.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
-  color: #80808080!important;
-}*/
-.on-focus-mode .md-focus,
-.on-focus-mode .md-focus-container {
-  color: #d0d0d0;
-}
-.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) code,
-.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) tt {
-  border: 1px solid #180018;
-  background-color: #180018;
-}
-
-/* focus mode end */
-
-header,
-.context-menu,
-.megamenu-content,
-footer {
-  font-family: "IBM Plex Sans","Microsoft YaHei", "微软雅黑", "Open Sans", "Clear Sans", "Helvetica Neue",
-    Helvetica, Arial, sans-serif;
-}
-
-.megamenu-content {
-  background: #242424 !important;
-}
-
-.megamenu-opened header {
-  background-color: #242424;
-  background-image: none;
-}
-
-.file-node-content:hover .file-node-icon,
-.file-node-content:hover .file-node-open-state {
-  visibility: visible;
-}
-
-span.file-list-item-file-name-part {
-  color: #f0f0f0;
-}
-
-.file-list-item-summary {
-    height: 3rem;
-    overflow: hidden;
-    font-size: 13px;
-    line-height: 16px;
-    opacity: .7 !important;
-}
-
-.mac-seamless-mode #typora-sidebar {
-  background-color: #fafafa;
-  background-color: var(--side-bar-bg-color);
-}
-
-.md-lang {
-  color: #b4654d;
-}
-
-.html-for-mac .context-menu {
-  --item-hover-bg-color: #e6f0fe;
-}
-
-#md-notification .btn {
-  border: 0;
-}
-
-.dropdown-menu .divider {
-  border-color: #e5e5e5;
-}
-
-/* code mirror */
-
-.CodeMirror-gutter-filler,
-.CodeMirror-scrollbar-filler {
-  background-color: #180018;
-}
-.CodeMirror-gutters {
-  border-right: 1px solid #484848;
-}
-.CodeMirror-linenumber {
-  color: #808080;
-}
-.cm-s-inner .cm-keyword {
-  color: rgb(189, 97, 201);
-}
-.cm-s-inner .cm-atom,
-.cm-s-inner.cm-atom {
-  color: rgb(131, 115, 236);
-}
-.cm-s-inner .cm-number {
-  color: rgb(73, 190, 143);
-}
-.cm-s-inner .cm-def {
-  color: rgb(123, 123, 255);
-}
-.cm-s-inner .cm-variable {
-  color: rgb(199, 199, 199);
-}
-.cm-s-inner .cm-variable-2 {
-  color: rgb(131, 166, 201);
-}
-.cm-s-inner .cm-variable-3 {
-  color: rgb(153, 197, 181);
-}
-.cm-s-inner .cm-string {
-  color: rgb(194, 104, 104);
-}
-.cm-s-inner .cm-property {
-  color: rgb(199, 199, 199);
-}
-.cm-s-inner .cm-operator {
-  color: #b67e7e;
-}
-.cm-s-inner .cm-comment,
-.cm-s-inner.cm-comment {
-  color: rgb(216, 158, 99);
-}
-.cm-s-inner .cm-string-2 {
-  color: rgb(223, 152, 116);
-}
-.cm-s-inner .cm-meta {
-  color: rgb(158, 158, 158);
-}
-.cm-s-inner .cm-qualifier {
-  color: rgb(145, 145, 145);
-}
-.cm-s-inner .cm-builtin {
-  color: rgb(169, 145, 226);
-}
-.cm-s-inner .cm-bracket {
-  color: rgb(214, 214, 166);
-}
-.cm-s-inner .cm-tag {
-  color: rgb(162, 207, 154);
-}
-.cm-s-inner .cm-attribute {
-  color: rgb(169, 169, 216);
-}
-.cm-s-inner .cm-header,
-.cm-s-inner.cm-header {
-  color: rgb(161, 161, 255);
-}
-.cm-s-inner .cm-quote,
-.cm-s-inner.cm-quote {
-  color: rgb(90, 158, 90);
-}
-.cm-s-inner .cm-hr,
-.cm-s-inner.cm-hr {
-  color: rgb(184, 184, 184);
-}
-.cm-s-inner .cm-link,
-.cm-s-inner.cm-link {
-  color: rgb(134, 134, 197);
-}
-.cm-negative {
-  color: rgb(218, 126, 126);
-}
-.cm-positive {
-  color: rgb(118, 189, 118);
-}
-.cm-header,
-.cm-strong {
-  font-weight: 700;
-}
-.cm-del {
-  text-decoration: line-through;
-}
-.cm-em {
-  font-style: italic;
-}
-.cm-link {
-  text-decoration: underline;
-}
-.cm-error {
-  color: rgb(255, 75, 75);
-}
-.cm-invalidchar {
-  color: rgb(255, 75, 75);
-}
-.cm-constant {
-  color: #50a5e2;
-}
-.cm-defined {
-  color: #eccb66;
-}
-div.CodeMirror span.CodeMirror-matchingbracket {
-  color: rgb(139, 230, 139);
-}
-div.CodeMirror span.CodeMirror-nonmatchingbracket {
-  color: rgb(241, 99, 99);
-}
-.cm-searching {
-  background: #ffa;
-  background: rgba(255, 255, 0, 0.4);
-}
-.cm-tw-syntaxerror {
-  color: rgb(199, 199, 199);
-  background-color: #900;
-}
-.CodeMirror div.CodeMirror-cursor {
-  border-left: 3px solid #e4629a;
-}
-#typora-source .CodeMirror-gutter-wrapper {
-  font-family: var(--monospace) !important;
-}
-.cm-s-typora-default .CodeMirror-activeline-background {
-  left: -99999px;
-  right: -99999px;
-  background: #80808020;
-}
-.cm-s-typora-default .cm-code, .cm-s-typora-default .cm-comment {
-  color: #8997d4;
-  font-family: monospace;
-  font-family: var(--monospace);
-}
-.cm-s-typora-default .cm-string {
-  color: #84a97e;
-}
-.cm-s-typora-default .cm-tag {
-  color: #c36260;
-}
-
-/* unibody */
-
-.megamenu-opened header {
-  background-color: var(--bg-color) !important;
-}
-
-.megamenu-menu {
-  background-color: var(--side-bar-bg-color) !important;
-}
-
-#megamenu-back-btn {
-  border-color: transparent;
-  color: #a94442;
-}
-
-.megamenu-content {
-  background: var(--bg-color) !important;
-}
-
-.long-btn {
-  border: 1px solid #9292928f;
-}
-
-table/*,
-input */{
-  border: 1px solid #9292928f !important;
-}
-
-#recent-file-panel-action-btn {
-  background-color: var(--bg-color) !important;
-  border: 1px solid #9292928f !important;
-}
-
-#top-titlebar .toolbar-icon.btn.hover, #top-titlebar .toolbar-icon.btn:hover {
-  background-color: #180018;
-}
-
-#top-titlebar {
-  font-family: var(--monospace);
-}
-
-hr {
-  /* Common to all hr's */
-  border-top: 2pt solid transparent;
-  border-bottom: 2pt solid transparent;
-  border-left-style: solid;
-  border-left-color: yellow;
-
-  /* Top-level hr (aka page delineator) */
-  border-left-width: 16cm;
-  margin-top: 18pt;
-  margin-bottom: 36pt;
+.context-menu {
+  background-color: var(--ccard);
 }
 
 i,
   em {
   color: yellow;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 h1,
@@ -959,8 +427,41 @@ strong {
   font-weight: 700;
 }
 
-strong {
-  font-weight: 500;
+hr {
+  /* Common to all hr's */
+  border-top: 2pt solid transparent;
+  border-bottom: 2pt solid transparent;
+  border-left-style: solid;
+  border-left-color: #05f35e;
+
+  /* Top-level hr (aka page delineator) */
+  border-left-width: 16cm;
+  margin-top: 20pt;
+  margin-bottom: 40pt;
+}
+
+a {
+  color: #a7d959;
+  text-decoration: none !important;
+  border-bottom: 1px solid #a7d959;
+}
+
+a:hover {
+  text-decoration: none !important;
+  border-bottom: 1px solid #fff;
+  font-weight: 300;
+}
+
+a:hover, p:hover {
+  background-color: #000;
+  padding: 4px 8px;
+  color: fuchsia;
+  font-weight: 300;
+}
+
+::selection {
+  background: #2b3400;
+  color: yellow;
 }
 
 
@@ -968,6 +469,6 @@ strong {
 </style><title>index</title>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><img src="./assets/to-look-upwards.webp" referrerpolicy="no-referrer" alt="to-look-upwards"></p><hr /><iframe width="640" height="360" scrolling="no" frameborder="0" style="border: none;" src="https://www.bitchute.com/embed/vpkDWa2ZTzO0/"></iframe><hr /><p><img src="./assets/s1.webp" referrerpolicy="no-referrer" alt="s1"></p><p><span>11 Serve the Lord with fear, and rejoice with trembling.</span></p><hr /><p><img src="./assets/s2.webp" referrerpolicy="no-referrer" alt="s2"></p><p><span>10 That at the name of Jesus every knee should bow, of </span><em><span>things</span></em><span> in heaven, and </span><em><span>things</span></em><span> in earth, and </span><em><span>things</span></em><span> under the earth;</span></p><p><span>11 And </span><em><span>that</span></em><span> every tongue should confess that Jesus Christ </span><em><span>is</span></em><span> Lord, to the glory of God the Father.</span></p><p><span>12 Wherefore, my beloved, as ye have always obeyed, not as in my presence only, but now much more in my absence, work out your own salvation with fear and trembling.</span></p><p><span>13 For it is God which worketh in you both to will and to do of </span><em><span>his</span></em><span> good pleasure.</span></p><hr /><p><img src="./assets/s3.webp" referrerpolicy="no-referrer" alt="s3"></p><p><span>4 And Jesus answered and said unto them, Take heed that no man deceive you.</span></p><p><span>5 For many shall come in my name, saying, I am Christ; and shall deceive many.</span></p><p><span>6 And ye shall hear of wars and rumours of wars: see that ye be not troubled: for all </span><em><span>these</span></em><span> </span><em><span>things</span></em><span> must come to pass, but the end is not yet.</span></p><p><span>7 For nation shall rise against nation, and kingdom against kingdom: and there shall be famines, and pestilences, and earthquakes, in divers places.</span></p><p><span>8 All these </span><em><span>are</span></em><span> the beginning of sorrows.</span></p><p><span>9 Then shall they deliver you up to be afflicted, and shall kill you: and ye shall be hated of all nations for my name’s sake.</span></p><p><span>10 And then shall many be offended, and shall betray one another, and shall hate one another.</span></p><p><span>11 And many false prophets shall rise, and shall deceive many.</span></p><p><span>12 And because iniquity shall abound, the love of many shall wax cold.</span></p><p><span>13 But he that shall endure unto the end, the same shall be saved.</span></p><hr /><p><img src="./assets/s4.webp" referrerpolicy="no-referrer" alt="s4"></p><p><span>7 And they asked him, saying, Master, but when shall these things be? and what sign </span><em><span>will</span></em><span> </span><em><span>there</span></em><span> </span><em><span>be</span></em><span> when these things shall come to pass?</span></p><p><span>8 And he said, Take heed that ye be not deceived: for many shall come in my name, saying, I am </span><em><span>Christ;</span></em><span> and the time draweth near: go ye not therefore after them.</span></p><p><span>9 But when ye shall hear of wars and commotions, be not terrified: for these things must first come to pass; but the end </span><em><span>is</span></em><span> not by and by.</span></p><p><span>10 Then said he unto them, Nation shall rise against nation, and kingdom against kingdom:</span></p><p><span>11 And great earthquakes shall be in divers places, and famines, and pestilences; and fearful sights and great signs shall there be from heaven.</span></p><p><span>12 But before all these, they shall lay their hands on you, and persecute </span><em><span>you</span></em><span>, delivering </span><em><span>you</span></em><span> up to the synagogues, and into prisons, being brought before kings and rulers for my name’s sake.</span></p><p><span>13 And it shall turn to you for a testimony.</span></p><p><span>14 Settle </span><em><span>it</span></em><span> therefore in your hearts, not to meditate before what ye shall answer:</span></p><p><span>15 For I will give you a mouth and wisdom, which all your adversaries shall not be able to gainsay nor resist.</span></p><p><span>16 And ye shall be betrayed both by parents, and brethren, and kinsfolks, and friends; and </span><em><span>some</span></em><span> of you shall they cause to be put to death.</span></p><p><span>17 And ye shall be hated of all </span><em><span>men</span></em><span> for my name’s sake.</span></p><p><span>18 But there shall not an hair of your head perish.</span></p><p><span>19 In your patience possess ye your souls.</span></p><p><span>20 And when ye shall see Jerusalem compassed with armies, then know that the desolation thereof is nigh.</span></p><hr /><p><img src="./assets/s5.webp" referrerpolicy="no-referrer" alt="s5"></p><p><span>5 And Jesus answering them began to say, Take heed lest any </span><em><span>man</span></em><span> deceive you:</span></p><p><span>6 For many shall come in my name, saying, I am </span><em><span>Christ;</span></em><span> and shall deceive many.</span></p><p><span>7 And when ye shall hear of wars and rumours of wars, be ye not troubled: for </span><em><span>such</span></em><span> </span><em><span>things</span></em><span> must needs be; but the end </span><em><span>shall</span></em><span> not </span><em><span>be</span></em><span> yet.</span></p><p><span>8 For nation shall rise against nation, and kingdom against kingdom: and there shall be earthquakes in divers places, and there shall be famines and troubles: these </span><em><span>are</span></em><span> the beginnings of sorrows.</span></p><p><span>9 But take heed to yourselves: for they shall deliver you up to councils; and in the synagogues ye shall be beaten: and ye shall be brought before rulers and kings for my sake, for a testimony against them.</span></p><p><span>10 And the gospel must first be published among all nations.</span></p><p><span>11 But when they shall lead </span><em><span>you</span></em><span>, and deliver you up, take no thought beforehand what ye shall speak, neither do ye premeditate: but whatsoever shall be given you in that hour, that speak ye: for it is not ye that speak, but the Holy Ghost.</span></p><p><span>12 Now the brother shall betray the brother to death, and the father the son; and children shall rise up against </span><em><span>their</span></em><span> parents, and shall cause them to be put to death.</span></p><p><span>13 And ye shall be hated of all </span><em><span>men</span></em><span> for my name’s sake: but he that shall endure unto the end, the same shall be saved.</span></p><hr /><p><img src="./assets/s6.webp" referrerpolicy="no-referrer" alt="s6"></p><p><span>THEREFORE seeing we have this ministry, as we have received mercy, we faint not;</span></p><p><span>2 But have renounced the hidden things of dishonesty, not walking in craftiness, nor handling the word of God deceitfully; but by manifestation of the truth commending ourselves to every man’s conscience in the sight of God.</span></p><p><span>3 But if our gospel be hid, it is hid to them that are lost:</span></p><p><span>4 In whom the god of this world hath blinded the minds of them which believe not, lest the light of the glorious gospel of Christ, who is the image of God, should shine unto them.</span></p><p><span>5 For we preach not ourselves, but Christ Jesus the Lord; and ourselves your servants for Jesus’ sake.</span></p><p><span>6 For God, who commanded the light to shine out of darkness, hath shined in our hearts, to </span><em><span>give</span></em><span> the light of the knowledge of the glory of God in the face of Jesus Christ.</span></p><p><span>7 But we have this treasure in earthen vessels, that the excellency of the power may be of God, and not of us.</span></p><p><span>8 </span><em><span>We</span></em><span> </span><em><span>are</span></em><span> troubled on every side, yet not distressed; </span><em><span>we</span></em><span> </span><em><span>are</span></em><span> perplexed, but not in despair;</span></p><p><span>9 Persecuted, but not forsaken; cast down, but not destroyed;</span></p><p><span>10 Always bearing about in the body the dying of the Lord Jesus, that the life also of Jesus might be made manifest in our body.</span></p><hr /><p><img src="./assets/s7.webp" referrerpolicy="no-referrer" alt="s7"></p><p><span>AND in that day thou shalt say, O Lord, I will praise thee: though thou wast angry with me, thine anger is turned away, and thou comfortedst me.</span></p><p><span>2 Behold, God </span><em><span>is</span></em><span> my salvation; I will trust, and not be afraid: for the Lord JEHOVAH </span><em><span>is</span></em><span> my strength and </span><em><span>my</span></em><span> song; he also is become my salvation.</span></p><p><span>3 Therefore with joy shall ye draw water out of the wells of salvation.</span></p><p><span>4 And in that day shall ye say, Praise the Lord, call upon his name, declare his doings among the people, make mention that his name is exalted.</span></p><p><span>5 Sing unto the Lord; for he hath done excellent things: this </span><em><span>is</span></em><span> known in all the earth.</span></p><p><span>6 Cry out and shout, thou inhabitant of Zion: for great </span><em><span>is</span></em><span> the Holy One of Israel in the midst of thee.</span></p><hr /><p><img src="./assets/s8.webp" referrerpolicy="no-referrer" alt="s8"></p><p><span>8 He will swallow up death in victory; and the Lord God will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for the Lord hath spoken </span><em><span>it</span></em><span>.</span></p><p><span>9 And it shall be said in that day, Lo, this </span><em><span>is</span></em><span> our God; we have waited for him, and he will save us: this </span><em><span>is</span></em><span> the Lord; we have waited for him, we will be glad and rejoice in his salvation.</span></p><hr /><div style="position:relative;width:100%;height:0;padding-top:56.25%;"><iframe src="https://subsplash.com/+d6kc/embed/mi/+hfb5y6k?video&audio&info&embeddable&shareable&logo_watermark" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div><p>&nbsp;</p><p>&nbsp;</p><hr /><p><span>Download this website: </span><a href='./assets/public_html.zip'><span>Here</span></a><span>.</span></p><hr /></div></div>
+<div id='write'  class=''><p><img src="./assets/to-look-upwards.webp" referrerpolicy="no-referrer" alt="to-look-upwards"></p><hr /><iframe width="640" height="360" scrolling="no" frameborder="0" style="border: none;" src="https://www.bitchute.com/embed/vpkDWa2ZTzO0/"></iframe><hr /><p><img src="./assets/s1.webp" referrerpolicy="no-referrer" alt="s1"></p><p><span>11 Serve the Lord with fear, and rejoice with trembling.</span></p><hr /><p><img src="./assets/s2.webp" referrerpolicy="no-referrer" alt="s2"></p><p><span>10 That at the name of Jesus every knee should bow, of </span><em><span>things</span></em><span> in heaven, and </span><em><span>things</span></em><span> in earth, and </span><em><span>things</span></em><span> under the earth;</span></p><p><span>11 And </span><em><span>that</span></em><span> every tongue should confess that Jesus Christ </span><em><span>is</span></em><span> Lord, to the glory of God the Father.</span></p><p><span>12 Wherefore, my beloved, as ye have always obeyed, not as in my presence only, but now much more in my absence, work out your own salvation with fear and trembling.</span></p><p><span>13 For it is God which worketh in you both to will and to do of </span><em><span>his</span></em><span> good pleasure.</span></p><hr /><p><img src="./assets/s3.webp" referrerpolicy="no-referrer" alt="s3"></p><p><span>4 And Jesus answered and said unto them, Take heed that no man deceive you.</span></p><p><span>5 For many shall come in my name, saying, I am Christ; and shall deceive many.</span></p><p><span>6 And ye shall hear of wars and rumours of wars: see that ye be not troubled: for all </span><em><span>these</span></em><span> </span><em><span>things</span></em><span> must come to pass, but the end is not yet.</span></p><p><span>7 For nation shall rise against nation, and kingdom against kingdom: and there shall be famines, and pestilences, and earthquakes, in divers places.</span></p><p><span>8 All these </span><em><span>are</span></em><span> the beginning of sorrows.</span></p><p><span>9 Then shall they deliver you up to be afflicted, and shall kill you: and ye shall be hated of all nations for my name’s sake.</span></p><p><span>10 And then shall many be offended, and shall betray one another, and shall hate one another.</span></p><p><span>11 And many false prophets shall rise, and shall deceive many.</span></p><p><span>12 And because iniquity shall abound, the love of many shall wax cold.</span></p><p><span>13 But he that shall endure unto the end, the same shall be saved.</span></p><hr /><p><img src="./assets/s4.webp" referrerpolicy="no-referrer" alt="s4"></p><p><span>7 And they asked him, saying, Master, but when shall these things be? and what sign </span><em><span>will</span></em><span> </span><em><span>there</span></em><span> </span><em><span>be</span></em><span> when these things shall come to pass?</span></p><p><span>8 And he said, Take heed that ye be not deceived: for many shall come in my name, saying, I am </span><em><span>Christ;</span></em><span> and the time draweth near: go ye not therefore after them.</span></p><p><span>9 But when ye shall hear of wars and commotions, be not terrified: for these things must first come to pass; but the end </span><em><span>is</span></em><span> not by and by.</span></p><p><span>10 Then said he unto them, Nation shall rise against nation, and kingdom against kingdom:</span></p><p><span>11 And great earthquakes shall be in divers places, and famines, and pestilences; and fearful sights and great signs shall there be from heaven.</span></p><p><span>12 But before all these, they shall lay their hands on you, and persecute </span><em><span>you</span></em><span>, delivering </span><em><span>you</span></em><span> up to the synagogues, and into prisons, being brought before kings and rulers for my name’s sake.</span></p><p><span>13 And it shall turn to you for a testimony.</span></p><p><span>14 Settle </span><em><span>it</span></em><span> therefore in your hearts, not to meditate before what ye shall answer:</span></p><p><span>15 For I will give you a mouth and wisdom, which all your adversaries shall not be able to gainsay nor resist.</span></p><p><span>16 And ye shall be betrayed both by parents, and brethren, and kinsfolks, and friends; and </span><em><span>some</span></em><span> of you shall they cause to be put to death.</span></p><p><span>17 And ye shall be hated of all </span><em><span>men</span></em><span> for my name’s sake.</span></p><p><span>18 But there shall not an hair of your head perish.</span></p><p><span>19 In your patience possess ye your souls.</span></p><p><span>20 And when ye shall see Jerusalem compassed with armies, then know that the desolation thereof is nigh.</span></p><hr /><p><img src="./assets/s5.webp" referrerpolicy="no-referrer" alt="s5"></p><p><span>5 And Jesus answering them began to say, Take heed lest any </span><em><span>man</span></em><span> deceive you:</span></p><p><span>6 For many shall come in my name, saying, I am </span><em><span>Christ;</span></em><span> and shall deceive many.</span></p><p><span>7 And when ye shall hear of wars and rumours of wars, be ye not troubled: for </span><em><span>such</span></em><span> </span><em><span>things</span></em><span> must needs be; but the end </span><em><span>shall</span></em><span> not </span><em><span>be</span></em><span> yet.</span></p><p><span>8 For nation shall rise against nation, and kingdom against kingdom: and there shall be earthquakes in divers places, and there shall be famines and troubles: these </span><em><span>are</span></em><span> the beginnings of sorrows.</span></p><p><span>9 But take heed to yourselves: for they shall deliver you up to councils; and in the synagogues ye shall be beaten: and ye shall be brought before rulers and kings for my sake, for a testimony against them.</span></p><p><span>10 And the gospel must first be published among all nations.</span></p><p><span>11 But when they shall lead </span><em><span>you</span></em><span>, and deliver you up, take no thought beforehand what ye shall speak, neither do ye premeditate: but whatsoever shall be given you in that hour, that speak ye: for it is not ye that speak, but the Holy Ghost.</span></p><p><span>12 Now the brother shall betray the brother to death, and the father the son; and children shall rise up against </span><em><span>their</span></em><span> parents, and shall cause them to be put to death.</span></p><p><span>13 And ye shall be hated of all </span><em><span>men</span></em><span> for my name’s sake: but he that shall endure unto the end, the same shall be saved.</span></p><hr /><p><img src="./assets/s6.webp" referrerpolicy="no-referrer" alt="s6"></p><p><span>THEREFORE seeing we have this ministry, as we have received mercy, we faint not;</span></p><p><span>2 But have renounced the hidden things of dishonesty, not walking in craftiness, nor handling the word of God deceitfully; but by manifestation of the truth commending ourselves to every man’s conscience in the sight of God.</span></p><p><span>3 But if our gospel be hid, it is hid to them that are lost:</span></p><p><span>4 In whom the god of this world hath blinded the minds of them which believe not, lest the light of the glorious gospel of Christ, who is the image of God, should shine unto them.</span></p><p><span>5 For we preach not ourselves, but Christ Jesus the Lord; and ourselves your servants for Jesus’ sake.</span></p><p><span>6 For God, who commanded the light to shine out of darkness, hath shined in our hearts, to </span><em><span>give</span></em><span> the light of the knowledge of the glory of God in the face of Jesus Christ.</span></p><p><span>7 But we have this treasure in earthen vessels, that the excellency of the power may be of God, and not of us.</span></p><p><span>8 </span><em><span>We</span></em><span> </span><em><span>are</span></em><span> troubled on every side, yet not distressed; </span><em><span>we</span></em><span> </span><em><span>are</span></em><span> perplexed, but not in despair;</span></p><p><span>9 Persecuted, but not forsaken; cast down, but not destroyed;</span></p><p><span>10 Always bearing about in the body the dying of the Lord Jesus, that the life also of Jesus might be made manifest in our body.</span></p><hr /><p><img src="./assets/s7.webp" referrerpolicy="no-referrer" alt="s7"></p><p><span>AND in that day thou shalt say, O Lord, I will praise thee: though thou wast angry with me, thine anger is turned away, and thou comfortedst me.</span></p><p><span>2 Behold, God </span><em><span>is</span></em><span> my salvation; I will trust, and not be afraid: for the Lord JEHOVAH </span><em><span>is</span></em><span> my strength and </span><em><span>my</span></em><span> song; he also is become my salvation.</span></p><p><span>3 Therefore with joy shall ye draw water out of the wells of salvation.</span></p><p><span>4 And in that day shall ye say, Praise the Lord, call upon his name, declare his doings among the people, make mention that his name is exalted.</span></p><p><span>5 Sing unto the Lord; for he hath done excellent things: this </span><em><span>is</span></em><span> known in all the earth.</span></p><p><span>6 Cry out and shout, thou inhabitant of Zion: for great </span><em><span>is</span></em><span> the Holy One of Israel in the midst of thee.</span></p><hr /><p><img src="./assets/s8.webp" referrerpolicy="no-referrer" alt="s8"></p><p><span>8 He will swallow up death in victory; and the Lord God will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for the Lord hath spoken </span><em><span>it</span></em><span>.</span></p><p><span>9 And it shall be said in that day, Lo, this </span><em><span>is</span></em><span> our God; we have waited for him, and he will save us: this </span><em><span>is</span></em><span> the Lord; we have waited for him, we will be glad and rejoice in his salvation.</span></p><hr /><div style="position:relative;width:100%;height:0;padding-top:56.25%;"><iframe src="https://subsplash.com/+d6kc/embed/mi/+hfb5y6k?video&audio&info&embeddable&shareable&logo_watermark" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div><p>&nbsp;</p><p>&nbsp;</p><hr /><p><span>Download this website: </span><a href='./assets/public_html.zip'><span>Here</span></a><span>.</span></p><hr /><iframe width="560" height="315" src="https://www.youtube.com/embed/5bREjOUdBAw?si=KGrldHHmY33Ims1N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><hr /><p>&nbsp;</p></div></div>
 </body>
 </html>
